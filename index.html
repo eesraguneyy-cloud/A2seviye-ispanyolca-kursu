@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="A2 Seviye İspanyolca grup eğitimi. 18 Nisan 2026. 12 hafta, 48 ders, online. Türkçe konuşanlara yönelik, ezber değil mantık."/>
+<title>A2 İspanyolca Kursu – esracademia</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=block" rel="stylesheet"/>
+<style>
+:root {
+  --purple: #8B1A1A;
+  --salmon: #F0C040;
+  --cream:  #FAF4E8;
+  --cream2: #F5ECD8;
+  --border: #E0D0B0;
+  --muted:  #C8B898;
+  --mid:    #2A1008;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--purple);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  height: 56px; background: #8B1A1A;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 40px;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px; font-weight: 700; letter-spacing: -.2px;
+  color: rgba(250,244,232,.5); text-decoration: none;
+}
+.nav-logo em { font-style: normal; color: var(--salmon); }
+.nav-tag {
+  font-size: 9px; font-weight: 700; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--salmon);
+  border: 1.5px solid rgba(240,192,64,.4); padding: 5px 12px;
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh; padding-top: 56px;
+  background: #8B1A1A;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+  text-align: center; padding-left: 24px; padding-right: 24px;
+  padding-bottom: 72px; position: relative; overflow: hidden;
+}
+.hero::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 60% 45% at 50% 65%, rgba(240,192,64,.12) 0%, transparent 70%);
+}
+.hero-kicker {
+  position: relative; z-index: 1;
+  font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--salmon); margin-bottom: 32px;
+  animation: up .6s ease both;
+}
+.hero-kicker span { color: rgba(250,244,232,.4); margin: 0 8px; }
+.hero-h1 {
+  position: relative; z-index: 1;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(54px, 10vw, 116px);
+  font-weight: 900; line-height: .93; letter-spacing: -3px;
+  color: var(--cream);
+  animation: up .75s .06s ease both;
+}
+.hero-h1 em { font-style: italic; color: var(--salmon); }
+.hero-sub {
+  position: relative; z-index: 1;
+  margin-top: 24px; max-width: 440px; line-height: 1.8;
+  font-size: clamp(14px, 1.6vw, 16px); color: var(--muted);
+  animation: up .9s .12s ease both;
+}
+.hero-btn {
+  position: relative; z-index: 1;
+  margin-top: 40px;
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--salmon); color: #fff;
+  padding: 14px 32px; font-size: 13px; font-weight: 700; letter-spacing: .5px;
+  text-decoration: none; cursor: default;
+  animation: up 1s .18s ease both;
+}
+.hero-btn-arrow { animation: bounce 1.6s ease-in-out infinite; }
+@keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
+
+/* ── LEVEL STRIP ── */
+
+
+/* ── SHARED SECTION ── */
+.sec { padding: 80px 24px; }
+.wrap { max-width: 960px; margin: 0 auto; }
+.s-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 3.5px; text-transform: uppercase; color: var(--salmon); margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
+.s-eyebrow::before { content: ''; display: block; width: 24px; height: 2px; background: var(--salmon); flex-shrink: 0; }
+.s-h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 44px); font-weight: 900; line-height: 1.05; color: var(--purple); margin-bottom: 16px; }
+.s-h2 em { font-style: italic; color: var(--salmon); }
+.s-body { font-size: 15px; line-height: 1.82; color: var(--mid); max-width: 520px; }
+
+/* ── KAZANIMLAR ── dark purple */
+.topics-sec { background: #FAF4E8; }
+.topics-sec .s-eyebrow { color: #8B1A1A; }
+.topics-sec .s-eyebrow::before { background: #8B1A1A; }
+.topics-sec .s-h2 { color: #2A1008; font-size: clamp(32px,5vw,52px); }
+.topics-sec .s-h2 em { color: #F0C040; }
+.topics-sec .s-body { color: #6A5A30; }
+.topics {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 3px; margin-top: 44px;
+}
+.topic {
+  background: #F5ECD8; padding: 26px 22px;
+  display: flex; gap: 18px; align-items: flex-start;
+  transition: background .2s;
+}
+.topic:hover { background: #EDE4D0; }
+.topic-n { font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 900; color: #8B1A1A; opacity: .3; line-height: 1; flex-shrink: 0; width: 40px; }
+.topic-name { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: #2A1008; margin-bottom: 6px; line-height: 1.3; }
+.topic-sub { font-size: 11px; color: #8B1A1A; opacity: .7; font-style: italic; line-height: 1.5; }
+
+/* ── SCHEDULE ── cream2 */
+.schedule-sec { background: #FAF4E8; }
+.schedule-sec .s-h2 { color: #2A1008; }
+.sch-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 36px; border: 1px solid var(--border); }
+@media(max-width:560px){ .sch-grid { grid-template-columns: 1fr; } }
+.sch-card { background: #8B1A1A; padding: 28px; border: 1px solid rgba(240,192,64,.15); }
+.sch-k { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: #F0C040; margin-bottom: 10px; }
+.sch-v { font-family: 'Playfair Display', serif; font-size: clamp(20px, 3.5vw, 28px); font-weight: 700; color: #FAF4E8; line-height: 1.1; margin-bottom: 6px; }
+.sch-s { font-size: 13px; color: rgba(250,244,232,.5); }
+.sch-meta {
+  grid-column: 1 / -1; background: #C8B898; padding: 0;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  border: 1px solid #B8A888;
+}
+.sch-mi { padding: 20px; display: flex; flex-direction: column; gap: 5px; border-right: 1px solid rgba(255,255,255,.3); }
+.sch-mi:last-child { border-right: none; }
+.sch-ml { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(42,16,8,.6); }
+.sch-mv { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: #FAF4E8; line-height: 1.2; }
+.sch-tl { grid-column: 1 / -1; padding: 22px 28px; border: 1px solid #E0D0B0; background: #fff; display: flex; align-items: center; }
+
+.dahil-divider { display: flex; align-items: center; gap: 14px; margin: 36px 0 24px; padding-top: 4px; }
+.dahil-line { flex: 1; height: 1px; background: #E0D0B0; }
+.dahil-label { font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #8B1A1A; white-space: nowrap; padding: 0 6px; }
+.dahil-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; border: 1px solid var(--border); }
+.dahil-item { background: #fff; border: 1px solid #E0D0B0; padding: 22px 20px; display: flex; gap: 14px; align-items: flex-start; transition: background .15s; }
+.dahil-item:hover { background: #FAF4E8; }
+.dahil-icon { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.dahil-name { font-size: 14px; font-weight: 700; color: #2A1008; margin-bottom: 4px; line-height: 1.3; }
+.dahil-desc { font-size: 12px; color: #9A8860; line-height: 1.5; }
+.tl-b { flex: 1; text-align: center; }
+.tl-t { font-size: 14px; font-weight: 700; color: #2A1008; }
+.tl-l { font-size: 9px; color: #9A8860; letter-spacing: 1px; text-transform: uppercase; margin-top: 4px; }
+.tl-bar { height: 3px; background: #8B1A1A; margin-top: 8px; border-radius: 1px; }
+.tl-bar.dim { background: #E0D0B0; }
+.tl-sep { width: 1px; height: 30px; background: #E0D0B0; margin: 0 4px; }
+
+/* ── WHO ── cream */
+.who-sec { background: var(--cream); }
+.who-grid { display: grid; grid-template-columns: 290px 1fr; border: 1px solid var(--border); }
+@media(max-width:640px){ .who-grid { grid-template-columns: 1fr; } }
+.who-intro { background: var(--cream2); padding: 44px 36px; border-right: 1px solid var(--border); }
+.who-list { display: flex; flex-direction: column; }
+.who-row { display: flex; gap: 16px; align-items: flex-start; padding: 22px 28px; border-bottom: 1px solid var(--border); transition: background .15s; }
+.who-row:last-child { border-bottom: none; }
+.who-row:hover { background: var(--cream2); }
+.who-dash { color: var(--salmon); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+.who-title { display: block; font-size: 14px; font-weight: 600; color: var(--purple); margin-bottom: 4px; }
+.who-desc { font-size: 13px; color: var(--mid); line-height: 1.65; }
+
+/* ── TESTIMONIALS ── dark purple */
+.testi-sec { background: #8B1A1A; }
+.testi-sec .s-eyebrow { color: var(--salmon); }
+.testi-sec .s-h2 { color: var(--cream); }
+.testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(255px, 1fr)); gap: 2px; margin-top: 40px; border: 1px solid rgba(240,192,64,.1); }
+.testi-card { background: rgba(255,255,255,.03); border: 1px solid rgba(240,192,64,.1); padding: 28px 24px; display: flex; flex-direction: column; gap: 14px; position: relative; }
+.tq-mark { font-family: 'Playfair Display', serif; font-size: 52px; line-height: .8; color: rgba(240,192,64,.15); position: absolute; top: 12px; left: 16px; pointer-events: none; }
+.tq-text { font-size: 14px; font-style: italic; line-height: 1.7; color: rgba(250,244,232,.7); position: relative; }
+.tq-author { display: flex; align-items: center; gap: 10px; margin-top: auto; }
+.tq-author::before { content: ''; display: inline-block; width: 14px; height: 1px; background: #F0C040; flex-shrink: 0; }
+.tq-name { font-size: 13px; font-weight: 700; color: var(--purple); }
+.tq-role { font-size: 10px; color: var(--muted); letter-spacing: .5px; }
+
+/* ── APPROACH ── cream2 */
+.approach-sec { background: var(--cream2); border-top: 1px solid var(--border); }
+.approach-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 2px; margin-top: 44px; border: 1px solid var(--border); }
+.approach-card { background: var(--cream); padding: 30px 24px; border: 1px solid var(--border); transition: background .15s; }
+.approach-card:hover { background: var(--cream2); }
+.approach-num { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: #8B1A1A; margin-bottom: 12px; }
+.approach-title { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--purple); margin-bottom: 10px; }
+.approach-desc { font-size: 12px; color: var(--mid); line-height: 1.72; }
+
+/* ── STEPS ── salmon */
+.steps-sec { background: var(--salmon); }
+.steps-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 3.5px; text-transform: uppercase; color: var(--purple); opacity: .55; margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
+.steps-eyebrow::before { content: ""; display: block; width: 24px; height: 2px; background: var(--purple); opacity: .5; flex-shrink: 0; }
+.steps-h2 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 5vw, 56px); font-weight: 900; line-height: 1.0; color: var(--purple); margin-bottom: 40px; }
+.steps-h2 em { font-style: italic; color: var(--purple); }
+.steps-list { display: flex; flex-direction: column; gap: 2px; }
+.step { display: flex; gap: 26px; padding: 26px 30px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.18); transition: background .15s; align-items: flex-start; }
+.step:hover { background: rgba(255,255,255,.18); }
+.step-n { font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 900; color: rgba(139,26,26,.2); line-height: 1; flex-shrink: 0; width: 56px; }
+.step-body { flex: 1; }
+.step-title { font-size: 18px; font-weight: 700; color: var(--purple); margin-bottom: 8px; line-height: 1.3; }
+.step-desc { font-size: 14px; color: rgba(139,26,26,.6); line-height: 1.75; margin-bottom: 14px; }
+.btn-test {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #8B1A1A; color: #FAF4E8;
+  padding: 13px 26px; font-size: 13px; font-weight: 700; letter-spacing: .5px;
+  text-decoration: none; transition: opacity .2s, transform .2s;
+}
+.btn-test:hover { opacity: .85; transform: translateY(-1px); }
+
+/* ── CTA ── dark purple */
+.faq-sec { background: var(--cream2); border-top: 1px solid var(--border); }
+.faq-list { display: flex; flex-direction: column; gap: 2px; margin-top: 40px; border: 1px solid var(--border); }
+.faq-item { background: var(--cream); border: 1px solid var(--border); border-left: 3px solid transparent; transition: border-color .2s; }
+.faq-item.open { border-left-color: #8B1A1A; }
+.faq-q {
+  font-size: 16px; font-weight: 700; color: #2A1008; line-height: 1.3;
+  padding: 24px 32px; cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  user-select: none;
+}
+.faq-q:hover { background: var(--cream2); }
+.faq-arrow { width: 18px; height: 18px; flex-shrink: 0; transition: transform .3s; }
+.faq-item.open .faq-arrow { transform: rotate(180deg); }
+.faq-a {
+  font-size: 14px; color: var(--muted); line-height: 1.75;
+  padding: 0 32px; max-height: 0; overflow: hidden;
+  transition: max-height .35s ease, padding .35s ease;
+}
+.faq-item.open .faq-a { max-height: 200px; padding: 0 32px 24px; }
+.cta-sec { background: #8B1A1A; padding: 96px 24px; text-align: center; position: relative; overflow: hidden; }
+.cta-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 3.5px; text-transform: uppercase; color: rgba(250,244,232,.35); margin-bottom: 16px; position: relative; display: flex; align-items: center; justify-content: center; gap: 12px; }
+.cta-eyebrow::before { content: ""; display: block; width: 24px; height: 2px; background: rgba(250,244,232,.35); flex-shrink: 0; }
+.cta-h2 { font-family: 'Playfair Display', serif; font-size: clamp(40px, 7vw, 72px); font-weight: 900; color: var(--cream); line-height: 1; margin-bottom: 18px; position: relative; }
+.cta-h2 em { font-style: italic; color: var(--salmon); }
+.cta-body { font-size: 15px; color: rgba(250,244,232,.5); max-width: 340px; margin: 0 auto 40px; line-height: 1.8; position: relative; }
+.dm-box { display: inline-flex; align-items: stretch; background: rgba(250,244,232,.05); border: 1px solid rgba(250,244,232,.12); max-width: 560px; width: 100%; margin: 0 auto 24px; flex-wrap: wrap; }
+.dm-text { flex: 1; min-width: 200px; padding: 16px 20px; font-size: 14px; font-style: italic; line-height: 1.6; color: rgba(250,244,232,.65); text-align: left; }
+.dm-label { display: block; font-size: 9px; font-weight: 700; font-style: normal; letter-spacing: 2px; text-transform: uppercase; color: rgba(250,244,232,.3); margin-bottom: 6px; }
+.btn-copy { display: inline-flex; align-items: center; gap: 8px; background: var(--salmon); color: #fff; border: none; padding: 0 22px; min-height: 52px; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: .5px; cursor: pointer; flex-shrink: 0; white-space: nowrap; transition: opacity .2s; }
+.btn-copy:hover { opacity: .85; }
+.btn-copy.ok { background: #1e5c1e; }
+.btn-ig { display: inline-flex; align-items: center; gap: 12px; background: var(--salmon); color: #fff; padding: 15px 34px; font-size: 14px; font-weight: 700; letter-spacing: .4px; text-decoration: none; transition: opacity .2s, transform .2s; }
+.btn-ig:hover { opacity: .85; transform: translateY(-2px); }
+.cta-note { margin-top: 18px; font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(250,244,232,.28); position: relative; }
+
+/* ── FOOTER ── */
+footer { background: var(--purple); padding: 26px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; border-top: 1px solid rgba(255,255,255,.05); }
+.f-brand { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: rgba(250,244,232,.45); text-decoration: none; }
+.f-brand em { font-style: normal; color: rgba(240,192,64,.7); }
+.f-copy { font-size: 12px; color: rgba(250,244,232,.3); }
+.f-legal { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.f-link { font-size: 11px; color: rgba(250,244,232,.35); text-decoration: none; transition: color .2s; }
+.f-link:hover { color: rgba(250,244,232,.7); }
+.f-dot { font-size: 11px; color: rgba(250,244,232,.2); }
+
+/* ── ANIMATIONS ── */
+@keyframes up { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.in { opacity: 1; transform: none; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="https://esracademia.com" target="_blank">esra<em>cademia</em></a>
+  <div class="nav-tag">A2 İspanyolca Kursu</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-kicker">A2 Seviye İspanyolca Kursu <span>·</span> 18 Nisan 2026</div>
+  <h1 class="hero-h1">Anlayarak<br/><em>öğrenmek</em><br/>isteyenler için.</h1>
+  <p class="hero-sub">A1'i bitirdin. Şimdi konuları mantıkla kavradığın, pratiğe döktüğün bir A2 eğitimi seni bekliyor.</p>
+  <span class="hero-btn">Kursu Keşfet <span class="hero-btn-arrow"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M4 9l4 4 4-4" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+</section>
+
+<!-- KAZANIMLAR -->
+<section class="sec topics-sec">
+  <div class="wrap">
+    <p class="s-eyebrow reveal">Kazanımlar</p>
+    <h2 class="s-h2 reveal"><span style="color:#8B1A1A;">Bu kursun sonunda</span><br/><em>neler yapabilirsin?</em></h2>
+    <p class="s-body reveal">Konuları birbirinden bağımsız değil, birbiriyle bağlantılı bir şekilde öğreniyor ve kalıcı kazanımlar elde ediyorsun.</p>
+    <div class="topics">
+      <div class="topic reveal"><div class="topic-n">01</div><div><div class="topic-name">A1 konularını pekiştirebilirsin</div><div class="topic-sub">Temel yapıları oturtarak başlıyoruz</div></div></div>
+      <div class="topic reveal"><div class="topic-n">02</div><div><div class="topic-name">Geçmişi farklı zamanlarla anlatabilirsin</div><div class="topic-sub">Pretérito Perfecto · Indefinido · Imperfecto</div></div></div>
+      <div class="topic reveal"><div class="topic-n">03</div><div><div class="topic-name">O an ne yaptığını anlatabilirsin</div><div class="topic-sub">Estar + Gerundio</div></div></div>
+      <div class="topic reveal"><div class="topic-n">04</div><div><div class="topic-name">Gelecek planların hakkında konuşabilirsin</div><div class="topic-sub">Ir a + Infinitivo</div></div></div>
+      <div class="topic reveal"><div class="topic-n">05</div><div><div class="topic-name">Yeni bir fiili hemen kullanabilirsin</div><div class="topic-sub">Verbos regulares & irregulares</div></div></div>
+      <div class="topic reveal"><div class="topic-n">06</div><div><div class="topic-name">Rica edebilir, yönlendirebilir, fikirlerini belirtebilirsin</div><div class="topic-sub">Imperativo & Se impersonal</div></div></div>
+      <div class="topic reveal"><div class="topic-n">07</div><div><div class="topic-name">Kalıplara bağlı kalmadan kendini özgürce ifade edebilirsin</div><div class="topic-sub">Ezber değil, mantık</div></div></div>
+      <div class="topic reveal"><div class="topic-n">08</div><div><div class="topic-name">Günlük konuşmaları farklı zamanlar kullanarak yapabilirsin</div><div class="topic-sub">Gerçek hayat pratiği</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE + DAHIL -->
+<section class="sec schedule-sec">
+  <div class="wrap">
+    <p class="s-eyebrow reveal" style="color:#8B1A1A;">Kurs Programı & İçeriği</p>
+    <h2 class="s-h2 reveal"><span style="color:#8B1A1A;">Ne zaman, nasıl,</span><br/><em>neler dahil?</em></h2>
+    <div class="sch-grid">
+      <div class="sch-card reveal">
+        <div class="sch-k">Başlangıç</div>
+        <div class="sch-v">18 Nisan<br/>Cumartesi</div>
+        <div class="sch-s">Kontenjan sınırlı · Kayıt açık</div>
+      </div>
+      <div class="sch-card reveal">
+        <div class="sch-k">Bitiş</div>
+        <div class="sch-v">5 Temmuz<br/>Pazar</div>
+        <div class="sch-s">12 Hafta · 48 Ders</div>
+      </div>
+      <div class="sch-meta reveal">
+        <div class="sch-mi"><div class="sch-ml">Sıklık</div><div class="sch-mv">Haftada<br/>2 Gün</div></div>
+        <div class="sch-mi"><div class="sch-ml">Günler</div><div class="sch-mv">Cmt<br/>Paz</div></div>
+        <div class="sch-mi"><div class="sch-ml">Format</div><div class="sch-mv">Online</div></div>
+        <div class="sch-mi"><div class="sch-ml">Tür</div><div class="sch-mv">Grup<br/>Eğitimi</div></div>
+      </div>
+      <div class="sch-tl reveal">
+        <div class="tl-b"><div class="tl-t">10:00–10:50</div><div class="tl-l">1. Ders</div><div class="tl-bar"></div></div>
+        <div class="tl-sep"></div>
+        <div class="tl-b"><div class="tl-t">10:50–11:00</div><div class="tl-l">Mola</div><div class="tl-bar dim"></div></div>
+        <div class="tl-sep"></div>
+        <div class="tl-b"><div class="tl-t">11:00–11:50</div><div class="tl-l">2. Ders</div><div class="tl-bar"></div></div>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="dahil-divider reveal">
+      <div class="dahil-line"></div>
+      <div class="dahil-label">Programa Neler Dahil?</div>
+      <div class="dahil-line"></div>
+    </div>
+
+    <!-- Dahil grid -->
+    <div class="dahil-grid">
+      <div class="dahil-item reveal">
+        <div class="dahil-icon" style="background:#FFF3CC;border:1px solid rgba(240,192,64,.3);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8B1A1A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>
+        </div>
+        <div><div class="dahil-name">Türkçe Konu Anlatımları</div><div class="dahil-desc">İşin mantığını kavrıyoruz</div></div>
+      </div>
+      <div class="dahil-item reveal">
+        <div class="dahil-icon" style="background:#FFF3CC;border:1px solid rgba(240,192,64,.3);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8B1A1A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <div><div class="dahil-name">48 Canlı Ders</div><div class="dahil-desc">10:00–12:00 · Cmt–Paz</div></div>
+      </div>
+      <div class="dahil-item reveal">
+        <div class="dahil-icon" style="background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.25);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+        </div>
+        <div><div class="dahil-name">WhatsApp Grubu</div><div class="dahil-desc">Sürekli destek</div></div>
+      </div>
+      <div class="dahil-item reveal">
+        <div class="dahil-icon" style="background:#FFF3CC;border:1px solid rgba(240,192,64,.3);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8B1A1A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+        </div>
+        <div><div class="dahil-name">Dijital Materyaller</div><div class="dahil-desc">PDF + notlar</div></div>
+      </div>
+      <div class="dahil-item reveal">
+        <div class="dahil-icon" style="background:#FFF3CC;border:1px solid rgba(240,192,64,.3);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8B1A1A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <div><div class="dahil-name">Bireysel Takip</div><div class="dahil-desc">Ödev kontrolü · Geri bildirim</div></div>
+      </div>
+      <div class="dahil-item reveal">
+        <div class="dahil-icon" style="background:#FFF3CC;border:1px solid rgba(240,192,64,.3);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8B1A1A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
+        <div><div class="dahil-name">4 Beceri Pratiği</div><div class="dahil-desc">Konuşma · Dinleme · Yazma · Okuma</div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- WHO -->
+<section class="sec who-sec">
+  <div class="wrap">
+    <div class="who-grid reveal">
+      <div class="who-intro">
+        <p class="s-eyebrow">Kimler İçin?</p>
+        <h2 class="s-h2" style="font-size:clamp(22px,3.2vw,34px);">Bu kurs<br/><em>senin için mi?</em></h2>
+        <p class="s-body" style="font-size:13px;margin-top:10px;">Aşağıdakilerden biri seni anlatıyorsa tam yerindesin.</p>
+      </div>
+      <div class="who-list">
+        <div class="who-row"><div class="who-dash">—</div><div><strong class="who-title">A1'i tamamladıysan</strong><span class="who-desc">Temel yapıları biliyorsun ama konuşurken takılıp kalıyorsun.</span></div></div>
+        <div class="who-row"><div class="who-dash">—</div><div><strong class="who-title">Geçmiş zamanlarda karışıyorsan</strong><span class="who-desc">Indefinido mu, Imperfecto mu? İkisini de kavrayamamışsan bu kurs sana göre.</span></div></div>
+        <div class="who-row"><div class="who-dash">—</div><div><strong class="who-title">Türkçe konuşan biri olarak öğrenmek istiyorsan</strong><span class="who-desc">Tüm açıklamalar Türkçe; dil mantığı Türkçe–İspanyolca çiftine göre kurgulanmış.</span></div></div>
+        <div class="who-row"><div class="who-dash">—</div><div><strong class="who-title">Ezbere değil anlamaya inanıyorsan</strong><span class="who-desc">Konuların mantığını kavramak istiyorsan, doğru yerdesin.</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="sec testi-sec">
+  <div class="wrap">
+    <p class="s-eyebrow reveal">Öğrenci Yorumları</p>
+    <h2 class="s-h2 reveal">Öğrencilerim <em>ne diyor?</em></h2>
+    <div class="testi-grid">
+      <div class="testi-card reveal"><div class="tq-mark">"</div><p class="tq-text">Sizinle çalışmaya başladıktan sonra doğru bir yerde olduğumu hissettim.</p><div class="tq-author"><div><div class="tq-name">Altuğ</div><div class="tq-role">A1→A2 öğrencisi</div></div></div></div>
+      <div class="testi-card reveal"><div class="tq-mark">"</div><p class="tq-text">Kursa başlarken cümle dahi kuramazken şu anda derdimi anlatabildiğimi görüyorum.</p><div class="tq-author"><div><div class="tq-name">Serdar</div><div class="tq-role">A1→A2 öğrencisi</div></div></div></div>
+      <div class="testi-card reveal"><div class="tq-mark">"</div><p class="tq-text">A1'de birlikteydik, A2'de de devam etmek için sabırsızlanıyorum.</p><div class="tq-author"><div><div class="tq-name">Tülay</div><div class="tq-role">A1→A2 öğrencisi</div></div></div></div>
+      <div class="testi-card reveal"><div class="tq-mark">"</div><p class="tq-text">Derslerin interaktif olması sayesinde iletişim becerilerimin gelişimini direkt deneyimleyebiliyorum. Süreç hem keyifli hem de verimli ilerliyor; ilerlediğimi görmek beni ekstra motive ediyor.</p><div class="tq-author"><div><div class="tq-name">İlayda</div><div class="tq-role">A1→A2 öğrencisi</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section class="sec approach-sec">
+  <div class="wrap">
+    <p class="s-eyebrow reveal">Yöntem</p>
+    <h2 class="s-h2 reveal">esracademia <em>farkı</em></h2>
+    <div class="approach-grid">
+      <div class="approach-card reveal"><div class="approach-num">01</div><div class="approach-title">Ezber değil, mantık</div><div class="approach-desc">Her yapıyı neden böyle çalıştığıyla öğreniyorsun. Konuları anlayarak öğreniyorsun.</div></div>
+      <div class="approach-card reveal"><div class="approach-num">02</div><div class="approach-title">Materyal ayrıcalığı</div><div class="approach-desc">Ana dili Türkçe olanlara özel materyallerle öğrenmek büyük bir ayrıcalık.</div></div>
+      <div class="approach-card reveal"><div class="approach-num">03</div><div class="approach-title">Konuşma odaklı</div><div class="approach-desc">Her ders sonunda gerçek bir pratik. Doğru bağlamda kullanmak için.</div></div>
+      <div class="approach-card reveal"><div class="approach-num">04</div><div class="approach-title">Küçük gruplar</div><div class="approach-desc">Sorularına yer açılan, sana özel ilgi gören bir ortam. Kalabalık sınıf yok.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section class="sec steps-sec">
+  <div class="wrap">
+    <p class="steps-eyebrow reveal">Kayıt Süreci</p>
+    <h2 class="steps-h2 reveal">Başlamak için <em>3 adım.</em></h2>
+    <div class="steps-list">
+      <div class="step reveal">
+        <div class="step-n">01</div>
+        <div class="step-body">
+          <div class="step-title">Seviye testini tamamla</div>
+          <div class="step-desc">Kayıt için seviye testi zorunludur. Testi çöz, sonucu DM ile ilet — birlikte değerlendirelim.</div>
+          <a class="btn-test" href="https://eesraguneyy-cloud.github.io/seviye.testi/" target="_blank" rel="noopener noreferrer">Ücretsiz Seviye Testini Başlat →</a>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-n">02</div>
+        <div class="step-body">
+          <div class="step-title">Ödeme planını seç, ödemeyi gerçekleştir</div>
+          <div class="step-desc">Seviyeni onayladıktan sonra ödeme planlarını ve banka bilgilerini ileteceğim. Havale onaylanınca kaydın tamamlanır.</div>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-n">03</div>
+        <div class="step-body">
+          <div class="step-title">18 Nisan Cumartesi — ilk ders</div>
+          <div class="step-desc">Ders bağlantısı ve hazırlık materyalleri önceden iletilir. Gerisi bende.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec faq-sec">
+  <div class="wrap">
+    <p class="s-eyebrow reveal">Sık Sorulan Sorular</p>
+    <h2 class="s-h2 reveal">Aklındaki <em>sorular.</em></h2>
+    <div class="faq-list">
+
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">A1'i bitirmeden kayıt olabilir miyim?<svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="#8B1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div>
+        <div class="faq-a">Bu kurs A1'i tamamlamış öğrenciler için tasarlandı. Eğitime kayıt olabilmek için ücretsiz seviye testini çözüp sonucu DM ile iletmen gerekiyor — sonucu birlikte değerlendirelim.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">Bir derse katılamazsam ne olur?<svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="#8B1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div>
+        <div class="faq-a">Zorunlu bir durum olursa önceden WhatsApp grubundan haberdar edebilirsin. KVKK gereği ve herkesin kendini konforlu hissedeceği bir ortamda konuşma pratiği yapabilmesi için dersler kayıt altına alınmamaktadır; bu nedenle katılım önemlidir. Giremediğin derslerle ilgili hem materyal hem de bireysel destek sağlanır.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">Grup kaç kişilik?<svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="#8B1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div>
+        <div class="faq-a">Kontenjan sınırlı tutulur (8-10 kişi). Herkesin sorularına yer açılan, bireysel ilgi gören küçük bir grup ortamı önceliklidir.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">Ödeme planları neler?<svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="#8B1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div>
+        <div class="faq-a">Tek seferde, 2 ödemeli veya 3 ödemeli seçenekler mevcut. Tümü havale ile yapılır, komisyon veya aracı yoktur. Detaylar kayıt sürecinde iletilir.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">Dersler kayıt altına alınıyor mu?<svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="#8B1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div>
+        <div class="faq-a">KVKK gereği ve herkesin kendini konforlu hissedeceği bir ortamda konuşma pratiği yapabilmesi için dersler kayıt altına alınmamaktadır; bu nedenle katılım önemlidir. Giremediğin derslerle ilgili hem materyal hem de bireysel destek sağlanır.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">Kurs ne zaman başlıyor, ne zaman bitiyor?<svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="#8B1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div>
+        <div class="faq-a">İlk ders 18 Nisan 2026 Cumartesi, son ders 5 Temmuz 2026 Pazar. Toplam 12 hafta, 48 ders.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec">
+  <p class="cta-eyebrow reveal">Başvuru</p>
+  <h2 class="cta-h2 reveal">Başlamak bir<br/><em>mesaj uzağında.</em></h2>
+  <p class="cta-body reveal">Kurs ücreti ve soruların için Instagram'dan yaz — hemen yanıt al</p>
+  <div class="dm-box reveal">
+    <div class="dm-text">
+      <span class="dm-label">DM'e kopyala ve yapıştır</span>
+      "Kontenjan dolmadan 18 Nisan Cumartesi başlayan A2 kursuna kayıt olmak istiyorum."
+    </div>
+    <button class="btn-copy" id="copy-btn" onclick="doCopy()">
+      <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M3 11H2a1 1 0 01-1-1V2a1 1 0 011-1h8a1 1 0 011 1v1" stroke="currentColor" stroke-width="1.5"/></svg>
+      Kopyala
+    </button>
+  </div>
+  <a href="https://ig.me/m/esracademia" target="_blank" class="btn-ig reveal">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="#FAF4E8" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="#FAF4E8" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="#FAF4E8"/></svg>
+    @esracademia'ya DM Gönder
+  </a>
+  <p class="cta-note reveal">Son kayıt: 17 Nisan · Kontenjan sınırlı</p>
+</section>
+
+<footer>
+  <a class="f-brand" href="https://esracademia.com" target="_blank">esra<em>cademia</em></a>
+  <span class="f-copy">© 2026 esracademia · Tüm hakları saklıdır.</span>
+  <div class="f-legal">
+    <a class="f-link" href="https://esracademia.com/gizlilik-politikasi.php" target="_blank" rel="noopener noreferrer">Gizlilik Politikası</a>
+    <span class="f-dot">·</span>
+    <a class="f-link" href="https://esracademia.com/aydinlatma-metni.php" target="_blank" rel="noopener noreferrer">Aydınlatma Metni</a>
+    <span class="f-dot">·</span>
+    <a class="f-link" href="https://esracademia.com/kvkk.php" target="_blank" rel="noopener noreferrer">KVKK</a>
+  </div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('in'), i * 50);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  function toggleFaq(el) {
+    const item = el.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  function doCopy() {
+    const btn = document.getElementById('copy-btn');
+    navigator.clipboard.writeText('Kontenjan dolmadan 18 Nisan Cumartesi başlayan A2 kursuna kayıt olmak istiyorum.').then(() => {
+      btn.innerHTML = '<svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M2 8l4 4 8-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Kopyalandı!';
+      btn.classList.add('ok');
+      setTimeout(() => {
+        btn.innerHTML = '<svg width="13" height="13" viewBox="0 0 16 16" fill="none"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M3 11H2a1 1 0 01-1-1V2a1 1 0 011-1h8a1 1 0 011 1v1" stroke="currentColor" stroke-width="1.5"/></svg> Kopyala';
+        btn.classList.remove('ok');
+      }, 2500);
+    });
+  }
+</script>
+</body>
+</html>
